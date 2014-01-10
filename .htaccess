@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)/$ http://%{HTTP_HOST}/$1 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^auth/(.*)$ auth.php?requestType=$1
+RewriteRule ^register/(.*)$ register.php?requestType=$1
+RewriteRule ^rss/(.*)$ rss.php?requestType=$1
+</IfModule>
+
